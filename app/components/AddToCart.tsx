@@ -4,7 +4,7 @@ import React from 'react'
 const AddToCart = () => {
   return (
     <div>
-      <button onClick={()=>console.log("Add To Cart")}>Add To Cart</button>
+      <button className='btn btn-neutral' onClick={()=>console.log("Add To Cart")}>Add To Cart</button>
     </div>
   )
 }
