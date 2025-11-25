@@ -1,13 +1,13 @@
-import React from 'react'
-import AddToCart from './AddToCart'
-import styles from './ProductCard.module.css'
+import React from "react";
+import AddToCart from "./AddToCart";
+import styles from "./ProductCard.module.css";
 
 const ProductCard = () => {
   return (
-    <div className={styles.card}>
-      <AddToCart/>
+    <div className="p-5 bg-red-900">
+      <AddToCart />
     </div>
-  )
-}
+  );
+};
 
-export default ProductCard
+export default ProductCard;
