@@ -1,13 +1,17 @@
 import React from 'react'
 import UsersTable from './UsersTable'
-
-const User = async() => {
-
+interface Props{
+  searchParams:{
+    sortOrder:string;
+  }
+}
+const User = async({searchParams}:Props) => {
+const {sortOrder} = await searchParams
   return (
     <div>
       <h1>Users</h1>
       <p>{new Date().toLocaleTimeString()}</p>
-      <UsersTable/>
+      <UsersTable sortOrder={sortOrder}/>
     </div>
   )
 }
