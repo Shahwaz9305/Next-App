@@ -1,7 +1,7 @@
 import React from 'react'
 interface Props{
   params:{
-    id:number
+    id:number;
   }
 }
 const UserDetailsPage = async ( {params}:Props) => {
