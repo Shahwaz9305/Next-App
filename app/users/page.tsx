@@ -1,34 +1,19 @@
 import React from 'react'
-interface User{
-  id:number;
-  name:string;
-  email:string;
+import UsersTable from './UsersTable'
+import Link from 'next/link';
+interface Props{
+  searchParams:{
+    sortOrder:string;
+  }
 }
-const User = async() => {
-const res=  await fetch("https://jsonplaceholder.typicode.com/users",{
-  cache:'no-cache'
-});
-const Users :User[] = await res.json();
+const User = async({searchParams}:Props) => {
+const {sortOrder} = await searchParams
   return (
     <div>
       <h1>Users</h1>
+      <Link className='btn btn-success' href={'/users/new'}>New user</Link>
       <p>{new Date().toLocaleTimeString()}</p>
-      <table className='table table-bordered'>
-        <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-            </tr>
-        </thead>
-        <tbody>
-          {Users.map(user=> <tr key={user.id}> 
-            <td>{user.name}</td>
-            <td>{user.email}</td></tr> )}
-         
-        </tbody>
-        
-      </table>
-
+      <UsersTable sortOrder={sortOrder}/>
     </div>
   )
 }
