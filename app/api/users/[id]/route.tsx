@@ -23,3 +23,10 @@ export async function PUT(request:NextRequest,{params}:Props) {
   return NextResponse.json({id:1,name:body.name});
   
 }
+export async function DELETE(request:NextRequest,{params}:Props) {
+  const {id} = await params;
+  if(id>10){
+    return NextResponse.json({error:'user not found'},{status:404})
+  }
+  return NextResponse.json({},{status:200})
+}
